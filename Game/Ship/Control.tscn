@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://font.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.34902 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = -2.0
+focus_next = NodePath("IO/TextEdit")
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color_error = Color( 1, 0.611765, 0.611765, 1 )
+color_text_entered = Color( 0.686275, 0.729412, 1, 1 )
+color_text_default = Color( 1, 1, 1, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 384.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 923.999
+margin_top = 42.7128
+margin_right = 1278.0
+margin_bottom = 586.713
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="IO" type="VBoxContainer" parent="Panel"]
+margin_right = 353.0
+margin_bottom = 543.0
+rect_min_size = Vector2( 350, 0 )
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/IO"]
+margin_top = 1.0
+margin_right = 353.0
+margin_bottom = 501.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 500 )
+custom_fonts/normal_font = ExtResource( 2 )
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="LineEdit" parent="Panel/IO"]
+margin_top = 505.0
+margin_right = 353.0
+margin_bottom = 541.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 24 )
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

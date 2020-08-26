@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI_Scenes/Credits/Credits.gd" type="Script" id=1]
+[ext_resource path="res://font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI_Scenes/Credits/RichTextLabel.gd" type="Script" id=3]
+
+[node name="menuCredits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+margin_right = 1180.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Developed by [url=https://theodorelindsey.io/]RagingRoosevelt[/url].
+
+Thank you to [url=https://www.youtube.com/channel/UCaoqVlqPTH78_xjTjTOMcmQ]Miziziziz[/url] for hosting his [url=https://itch.io/jam/miz-jam-1]Miz Jam 1[/url] game jam.
+
+Thank you to Kenney for his [url=https://kenney.nl/assets/bit-pack]1-Bit Pack[/url] tileset.
+
+Thank you to [url=https://twitter.com/managore]Daniel Linssen[/url] for his font [url=https://managore.itch.io/m5x7]m5x7[/url]."
+text = "Developed by RagingRoosevelt.
+
+Thank you to Miziziziz for hosting his Miz Jam 1 game jam.
+
+Thank you to Kenney for his 1-Bit Pack tileset.
+
+Thank you to Daniel Linssen for his font m5x7."
+script = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="GridContainer"]
+margin_left = 557.0
+margin_top = 588.0
+margin_right = 623.0
+margin_bottom = 620.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 2 )
+text = "Close"
+[connection signal="pressed" from="GridContainer/Button" to="." method="_on_Button_pressed"]
